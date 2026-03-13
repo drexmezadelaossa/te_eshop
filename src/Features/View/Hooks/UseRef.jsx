@@ -1,0 +1,27 @@
+import { useState, useRef, useEffect } from 'react';
+
+export const App = () => {
+  const [inputValue, setInputValue] = useState("");
+  const count = useRef(0);
+
+  useEffect(() => {
+    count.current = count.current + 1;
+  });
+
+  return (
+    <>
+      <p>Type in the input field:</p>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+    </>
+  );
+}
+
+export const UseRef = () => {
+  return (
+    <div>UseRef</div>
+  )
+}
