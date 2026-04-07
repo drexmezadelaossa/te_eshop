@@ -1,178 +1,120 @@
+# TE_ESHOP 🛒
 
-# 🚀 Proyecto Web con React + Vite
-
-##  Descripción
-
-Este proyecto es una aplicación web desarrollada utilizando **React** junto con **Vite** como herramienta de construcción moderna.
-El objetivo principal del proyecto es crear una interfaz web rápida, modular y optimizada, utilizando componentes reutilizables y buenas prácticas de desarrollo frontend.
-
-La aplicación está diseñada para ofrecer una **experiencia de usuario eficiente**, mejorando aspectos como el **rendimiento, la accesibilidad y el SEO**, lo cual permite que la aplicación sea más rápida, accesible para todos los usuarios y mejor posicionada en buscadores.
+**TE_ESHOP** es una plataforma de comercio electrónico moderna desarrollada con **React** y **Vite**. El proyecto sigue una arquitectura modular basada en **Features**, lo que facilita la escalabilidad y el mantenimiento del código, permitiendo una separación clara entre la lógica de autenticación, el diseño global y la visualización de productos.
 
 ---
 
-#  Características Principales
+## 🚀 Tecnologías Utilizadas
 
-* Desarrollo basado en **componentes reutilizables de React**
-* Uso de **Vite** para compilación rápida y Hot Module Replacement (HMR)
-* Interfaz moderna con **Material UI**
-* Optimización de **rendimiento**
-* Mejora de **accesibilidad web**
-* Optimización de **SEO**
-* Arquitectura modular y escalable
-* Carga diferida de componentes con **React Lazy y Suspense**
+- **React:** Biblioteca principal para la interfaz de usuario.
+- **Vite:** Herramienta de construcción rápida para el frontend.
+- **Material UI (MUI):** Framework de componentes para un diseño profesional y responsivo.
+- **React Hooks:** Gestión de estado y efectos (useState, useEffect, useRef).
+- **PWA Ready:** Configuración preparada para Progressive Web App.
 
 ---
 
-#  Interfaz Gráfica
+## 📂 Estructura del Proyecto
 
-La interfaz del proyecto está diseñada para ser **clara, intuitiva y adaptable a diferentes dispositivos**.
+La arquitectura del código se organiza dentro de la carpeta `src` de la siguiente manera:
 
-Componentes principales:
-
-### Header
-
-Contiene el menú de navegación, el logo y accesos a diferentes secciones de la aplicación.
-
-### Content
-
-Sección donde se carga el contenido principal dependiendo de la navegación del usuario.
-
-### Articles
-
-Muestra información organizada mediante tarjetas o bloques visuales.
-
-### MyFavorites
-
-Permite visualizar los elementos favoritos del usuario dentro de la aplicación.
-
-La interfaz utiliza **Material UI**, lo que permite mantener un diseño moderno, limpio y responsive.
+- **Features/Auth:** Gestión de usuario, incluyendo componentes como `Myaccount`, `Mybuys` y `Myfavorites`. Incluye hooks personalizados como `UseFavoritos`.
+- **Features/Layout:** Componentes estructurales globales como `Header`, `Footer` y el contenedor de `Content`.
+- **Features/View:** Lógica de visualización principal, gestionando secciones de `Articles` y `Offers`.
+- **Utils:** Funciones de utilidad y animaciones compartidas, como `animarFavorito.jsx`.
+- **Public:** Recursos estáticos como imágenes y el archivo de configuración `Robots.txt`.
 
 ---
 
-#  Arquitectura del Proyecto
+## 🛠️ Instalación y Configuración
 
-El proyecto está organizado siguiendo una **estructura modular**, lo que facilita el mantenimiento del código y la escalabilidad del sistema.
+Sigue estos pasos para ejecutar el proyecto localmente:
 
-Estructura general:
+1. Clonar el repositorio:
 
+    ```bash
+    git clone [https://github.com/tu-usuario/te_eshop.git](https://github.com/drexmezadelaossa/te_eshop.git)
+    ```
+
+2. Instalar dependencias:
+
+    ```bash
+    npm install
+    ```
+
+3. Ejecutar en modo desarrollo:
+
+    ```bash
+    npm run dev
+
+    ## 🏛️ Arquitectura y Estructura del Proyecto
+
+El proyecto sigue una estructura modular organizada por niveles de responsabilidad, facilitando el mantenimiento y la escalabilidad del código:
+
+```text
 src
 │
 ├── Features
-│   └── Layout
-│       └── Components
-│           ├── Header.jsx
-│           ├── Content.jsx
-│           ├── Articles.jsx
-│           └── MyFavorities.jsx
+│   ├── Auth
+│   │   ├── Components
+│   │   │   ├── Myaccount.jsx
+│   │   │   ├── Mybuys.jsx
+│   │   │   └── Myfavorites.jsx
+│   │   ├── Hooks
+│   │   │   └── UseFavoritos.jsx
+│   │   └── Pages
+│   │
+│   ├── Layout
+│   │   ├── Components
+│   │   │   ├── Content.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   └── Header.jsx
+│   │   ├── hooks
+│   │   └── pages
+│   │
+│   └── View
+│       ├── Components
+│       │   ├── Articles.jsx
+│       │   └── Offers.jsx
+│       └── Hooks
 │
+├── Utils
+│   └── animarFavorito.jsx
+│
+├── App.css
 ├── App.jsx
-├── main.jsx
-└── assets
+├── Index.css
+└── Main.jsx
 
-### Explicación de archivos
 
-**main.jsx**
+ 🖼️ Captura de pantalla
 
-Es el punto de entrada de la aplicación React. Aquí se renderiza la aplicación en el DOM.
-
-**App.jsx**
-
-Controla la estructura principal de la aplicación y las rutas.
-
-**Components**
-
-Contiene los componentes reutilizables de la interfaz.
-
-Esta estructura permite:
-
-* Mejor organización del código
-* Escalabilidad del proyecto
-* Separación de responsabilidades
+![Vista previa de la aplicación](./public/img/image.png)
+  
 
 ---
 
-#  Instalación del Proyecto
+## ✨ Características Principales
 
-Para ejecutar este proyecto en tu computador debes seguir los siguientes pasos:
-
-### 1️ Clonar el repositorio
-
-git clone https://github.com/drexmezadelaossa/Tienda_katiana
-
-### 2️ Entrar a la carpeta del proyecto
-
-cd tu-repositorio
-
-### 3️ Instalar las dependencias
-
-npm install
-
-### 4️ Ejecutar el proyecto
-
-npm run dev
-
-Después de esto podrás abrir el proyecto en tu navegador en:
-
-http://localhost:5173/
+- **Gestión de Favoritos:** Sistema integrado para marcar y animar productos preferidos.
+- **Diseño Modular:** Componentes reutilizables organizados por funcionalidades.
+- **Interfaz Gourmet:** UI/UX optimizada para una experiencia de usuario fluida y estética.
+- **Responsive Design:** Adaptable a dispositivos móviles y escritorio.
 
 ---
 
-#  Tecnologías Utilizadas
+👨‍💻 Datos del Autor
 
-Este proyecto utiliza las siguientes tecnologías:
+Nombre: Andrés Meza
 
-* **React**
-* **Vite**
-* **JavaScript**
-* **Material UI**
-* **HTML5**
-* **CSS3**
-* **Node.js**
+Programa: Desarrollo de Software / Frontend
 
----
+Institución: SENA
 
-#  Optimización del Proyecto
+GitHub: @drexmezadelaossa
 
-El proyecto busca mejorar diferentes aspectos importantes del desarrollo web:
+🔗 Repositorio oficial
 
-### Rendimiento
+Puedes ver el código fuente y actualizaciones aquí:
 
-Se optimiza la carga de componentes utilizando **Lazy Loading y Suspense**.
-
-### Accesibilidad
-
-Se aplican buenas prácticas para mejorar la experiencia de usuarios con diferentes capacidades.
-
-### SEO
-
-Se mejora la estructura del contenido para facilitar el posicionamiento en motores de búsqueda.
-
----
-
-#  Datos Importantes del Autor
-
-**Nombre:** Andrés Mauricio Meza
-
-**Formación:**
-Aprendiz : Andres Mauricio Meza 
-Programacion : Analisis y desarrollo en software
-
-**Tecnologías que maneja:**
-
-* HTML
-* CSS
-* Java
-* React
-* Node.js
-
-**Objetivos profesionales**
-
-* Desarrollar aplicaciones web modernas
-* Mejorar continuamente sus habilidades en programación
-* Crear soluciones tecnológicas eficientes
-
----
-
-#  Licencia
-
-Este proyecto fue desarrollado con fines educativos.
+https://github.com/drexmezadelaossa/te_eshop.git
