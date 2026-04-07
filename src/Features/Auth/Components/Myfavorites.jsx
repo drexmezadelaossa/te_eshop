@@ -16,20 +16,27 @@ import { UseFavoritos } from "../Hooks/UseFavoritos.jsx";
 // Quitamos el default y usamos export nombrado
 export const Myfavorites = () => {
   const { favoritos, toggleFavorito } = UseFavoritos();
-  
+
   // Convertimos el objeto de favoritos en un array para mapearlo
   const listaFavoritos = favoritos ? Object.values(favoritos) : [];
 
   return (
-    <Box sx={{ p: 5, backgroundColor: "#f4ece2", minHeight: "100vh" }}>
-      <Typography 
-        variant="h3" 
-        sx={{ 
-          textAlign: "center", 
-          mb: 4, 
-          color: "#5d4037", 
+    <Box
+      sx={{
+        p: { xs: 2, md: 5 },
+        backgroundColor: "#f4ece2",
+        minHeight: "100vh"
+      }}
+    >
+      <Typography
+        variant="h3"
+        sx={{
+          textAlign: "center",
+          mb: 4,
+          color: "#5d4037",
           fontFamily: "'Playfair Display', serif",
-          fontWeight: 'bold' 
+          fontWeight: "bold",
+          fontSize: { xs: "2rem", md: "2.8rem" }
         }}
       >
         Mis Favoritos
@@ -42,41 +49,41 @@ export const Myfavorites = () => {
       ) : (
         <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 4 }}>
           {listaFavoritos.map((producto) => (
-            <Paper 
-              key={producto.id} 
-              elevation={3} 
-              sx={{ 
-                width: 320, 
-                p: 2, 
+            <Paper
+              key={producto.id}
+              elevation={3}
+              sx={{
+                width: { xs: "100%", sm: "45%", md: 320, lg: 350 },
+                p: 2,
                 borderRadius: 3,
                 transition: 'transform 0.3s',
                 '&:hover': { transform: 'scale(1.02)' }
               }}
             >
-              <Box 
-                component="img" 
-                src={producto.img} 
-                alt={producto.nombre} 
-                sx={{ width: "100%", height: 180, objectFit: "cover", borderRadius: 2 }} 
+              <Box
+                component="img"
+                src={producto.img}
+                alt={producto.nombre}
+                sx={{ width: "100%", height: { xs: 170, md: 180 }, objectFit: "cover", borderRadius: 2 }}
               />
               <Typography variant="h6" sx={{ mt: 2, fontWeight: "bold", color: "#5d4037" }}>
                 {producto.nombre}
               </Typography>
-              
+
               <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mt: 2 }}>
                 <Typography variant="h6" sx={{ color: '#c4a47c', fontWeight: 'bold' }}>
                   ${(producto?.precio ?? 0).toLocaleString()}
                 </Typography>
-                
-                <Button 
-                  onClick={() => toggleFavorito(producto)} 
-                  variant="contained" 
-                  sx={{ 
-                    bgcolor: "#5d4037", 
+
+                <Button
+                  onClick={() => toggleFavorito(producto)}
+                  variant="contained"
+                  sx={{
+                    bgcolor: "#5d4037",
                     "&:hover": { bgcolor: "#4e342e" },
                     textTransform: 'none',
                     borderRadius: '20px'
-                  }} 
+                  }}
                   startIcon={<FavoriteIcon />}
                 >
                   Quitar

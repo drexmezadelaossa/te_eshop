@@ -19,9 +19,9 @@ export const Offers = () => {
   const count = Timer();
 
   const paperStyle = {
-    p: 3,
+    p: { xs: 2, md: 3 },
     width: "100%",
-    maxWidth: 900,
+    maxWidth: { xs: "100%", md: 900 },
     borderRadius: 4,
     background: "linear-gradient(145deg, #ffffff, #f5f5f5)",
     transition: "all 0.3s ease",
@@ -35,8 +35,8 @@ export const Offers = () => {
   return (
     <Box
       sx={{
-        mt: 10,
-        px: 3,
+        mt: { xs: 8, md: 10 },
+        px: { xs: 2, md: 3 },
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -53,6 +53,7 @@ export const Offers = () => {
           component="div"
           color="primary"
           fontWeight="bold"
+          sx={{ fontSize: { xs: "1.6rem", md: "2rem" } }}
         >
           Se ha contabilizado {count} veces
         </Typography>

@@ -24,14 +24,20 @@ const App = () => {
   return (
     <HashRouter>
       <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
-        
+
         {/* Componente de Navegación Superior */}
         <Header />
 
         {/* Espaciador para el AppBar (80px) */}
-        <Toolbar sx={{ minHeight: "80px" }} />
+        <Toolbar sx={{ minHeight: { xs: "64px", md: "80px" } }} />
 
-        <Box component="main" sx={{ flexGrow: 1 }}>
+        <Box component="main" sx={{
+          flexGrow: 1,
+          width: "100%",
+          maxWidth: "1200px",
+          margin: "0 auto",
+          px: { xs: 2, sm: 3, md: 4 }
+        }}>
           <Routes>
             <Route path="/" element={<Content />} />
             <Route path="/articles" element={<Articles />} />
@@ -46,7 +52,7 @@ const App = () => {
 
         {/* Componente de Pie de Página */}
         <Footer />
-        
+
       </Box>
     </HashRouter>
   );

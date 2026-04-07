@@ -51,16 +51,23 @@ export const Articles = () => {
     <>
       <GlobalStyles styles={{ body: { margin: 0, padding: 0, background: "#f4ece2" } }} />
       <Box sx={{ width: "100%", minHeight: "100vh", background: "#f4ece2", display: "flex", flexDirection: "column", pt: 10 }}>
-        <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 4, p: 5 }}>
-          {listadoProductos.map(producto => {
+        <Box sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          gap: { xs: 2, md: 4 },
+          p: { xs: 2, md: 5 }
+        }}
+        >
+          {listadoProductos.slice(0, 12).map(producto => {
             const esFavorito = !!favoritos[producto.id];
             return (
               <Paper
                 key={producto.id}
                 elevation={3}
                 sx={{
-                  width: { xs: "100%", sm: 350, md: 400 },
-                  height: 350,
+                  width: { xs: "100%", sm: "45%", md: 350, lg: 380 },
+                  height: "auto",
                   overflow: "hidden",
                   display: "flex",
                   flexDirection: "column",
@@ -74,7 +81,7 @@ export const Articles = () => {
                   sx={{
                     position: "relative",
                     width: "100%",
-                    height: 220,
+                    height: { xs: 200, md: 220 },
                     overflow: "hidden",
                     cursor: "pointer",
                     "&:hover img": { transform: "scale(1.08)" },

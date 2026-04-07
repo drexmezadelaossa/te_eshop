@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; 
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -49,7 +49,7 @@ const Search = styled('div')(({ theme }) => ({
   width: '100%',
   maxWidth: '220px',
   transition: 'all 0.35s ease',
-  '&:hover': { 
+  '&:hover': {
     backgroundColor: alpha('#fff', 0.18),
     border: `1px solid ${GOLD}`,
     boxShadow: `0 0 14px ${alpha(GOLD, 0.6)}`
@@ -79,21 +79,21 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 const WaveDecorator = () => (
-  <Box 
-    sx={{ 
-      position: 'absolute', 
+  <Box
+    sx={{
+      position: 'absolute',
       bottom: -22,
-      left: 0, 
-      width: '100%', 
-      overflow: 'hidden', 
-      lineHeight: 0, 
-      zIndex: -1 
+      left: 0,
+      width: '100%',
+      overflow: 'hidden',
+      lineHeight: 0,
+      zIndex: -1
     }}
   >
     <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style={{ height: '30px', width: '100%' }}>
-      <path 
-        d="M0,0V46.29c47.29,22,104.29,29,158,17,70-16,136-65,206-70,73-5,142,35,213,55s138,17,206-10c66-27,128-75,196-86,72-11,138,18,221,39V0Z" 
-        fill={MAIN_CHOCO} 
+      <path
+        d="M0,0V46.29c47.29,22,104.29,29,158,17,70-16,136-65,206-70,73-5,142,35,213,55s138,17,206-10c66-27,128-75,196-86,72-11,138,18,221,39V0Z"
+        fill={MAIN_CHOCO}
       />
     </svg>
   </Box>
@@ -137,7 +137,7 @@ export const Header = () => {
   ];
 
   const drawer = (
-    <Box 
+    <Box
       onClick={handleDrawerToggle}
       sx={{ textAlign: 'center', bgcolor: MAIN_CHOCO, height: '100%', color: CREAM }}
     >
@@ -182,7 +182,7 @@ export const Header = () => {
           backdropFilter: 'blur(12px)',
           borderBottom: `1px solid ${alpha(GOLD, 0.3)}`,
           boxShadow: `0 12px 30px ${alpha('#000', 0.5)}`,
-          height: '80px',
+          height: { xs: '64px', md: '80px' },
           justifyContent: 'center'
         }}
       >
@@ -208,7 +208,7 @@ export const Header = () => {
                 fontFamily: "'Playfair Display', serif",
                 color: CREAM,
                 fontWeight: 700,
-                fontSize: { xs: '1.1rem', sm: '1.4rem' },
+                fontSize: { xs: '1rem', sm: '1.3rem', md: '1.4rem' },
                 letterSpacing: '1px',
                 textShadow: `0 2px 10px ${alpha('#000', 0.6)}`
               }}
@@ -260,7 +260,7 @@ export const Header = () => {
           </Stack>
 
           <Stack direction="row" alignItems="center" spacing={1.5}>
-            <Search sx={{ display: { xs: 'none', sm: 'block' } }}>
+            <Search sx={{ display: { xs: 'none', md: 'block' } }}>
               <SearchIconWrapper>
                 <SearchIcon sx={{ color: GOLD, fontSize: '1.1rem' }} />
               </SearchIconWrapper>
@@ -296,7 +296,7 @@ export const Header = () => {
         ModalProps={{ keepMounted: true }}
         sx={{
           display: { xs: 'block', lg: 'none' },
-          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 250, bgcolor: MAIN_CHOCO }
+          '& .MuiDrawer-paper': { boxSizing: 'border-box',width: { xs: 220, sm: 250 }, bgcolor: MAIN_CHOCO }
         }}
       >
         {drawer}

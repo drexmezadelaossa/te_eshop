@@ -38,8 +38,23 @@ export const Content = () => {
     <>
       <GlobalStyles styles={{ body: { margin: 0, padding: 0, background: "#f4ece2" } }} />
 
-      <Box sx={{ p: 5, display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
-        <Typography variant="h4" sx={{ color: "#5d4037", fontFamily: "'Playfair Display', serif", fontWeight: "bold" }}>
+      <Box sx={{
+        p: { xs: 2, md: 5 },
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: 4
+      }}
+      >
+        <Typography
+          variant="h4"
+          sx={{
+            color: "#5d4037",
+            fontFamily: "'Playfair Display', serif",
+            fontWeight: "bold",
+            fontSize: { xs: "1.8rem", md: "2.3rem" }
+          }}
+        >
           Productos Destacados
         </Typography>
 
@@ -52,8 +67,8 @@ export const Content = () => {
                 key={producto.id}
                 elevation={3}
                 sx={{
-                  width: 320,
-                  height: 330,
+                  width: { xs: "100%", sm: "45%", md: 320, lg: 340 },
+                  height: "auto",
                   p: 2,
                   borderRadius: 3,
                   display: "flex",
@@ -68,7 +83,7 @@ export const Content = () => {
                   src={producto.img}
                   alt={`Torta sabor ${producto.nombre}`}
                   loading="lazy"
-                  sx={{ width: "100%", height: 180, objectFit: "cover", borderRadius: 2, mb: 2 }}
+                  sx={{ width: "100%", height: { xs: 170, md: 180 }, objectFit: "cover", borderRadius: 2, mb: 2 }}
                 />
                 <Typography variant="h6" sx={{ color: "#5d4037", fontWeight: "bold" }}>
                   {producto.nombre}
@@ -127,16 +142,16 @@ export const Content = () => {
         <Button
           variant="contained"
           startIcon={<GitHubIcon />}
-          href="https://github.com/drexmezadelaossa/Tienda_katiana"
+          href="https://github.com/drexmezadelaossa/te_eshop.git"
           target="_blank"
           rel="noopener noreferrer"
           sx={{
             background: "linear-gradient(135deg, #24292e, #3b3f45)",
             color: "#fff",
             borderRadius: "40px",
-            px: 5,
-            py: 1.8,
-            fontSize: "17px",
+            px: { xs: 3, md: 5 },
+            py: { xs: 1.2, md: 1.8 },
+            fontSize: { xs: "14px", md: "17px" },
             fontWeight: 600,
             letterSpacing: "0.5px",
             textTransform: "none",

@@ -66,8 +66,8 @@ export const Myaccount = () => {
         <Paper
           elevation={10}
           sx={{
-            p: 5,
-            width: 360,
+            p: { xs: 3, md: 5 },
+            width: { xs: "100%", sm: 360 },
             borderRadius: 4,
             textAlign: "center",
             position: "relative",
@@ -80,8 +80,8 @@ export const Myaccount = () => {
               mx: "auto",
               mb: 2,
               bgcolor: "#3e2723",
-              width: 60,
-              height: 60
+              width: { xs: 50, md: 60 },
+              height: { xs: 50, md: 60 }
             }}
           >
             <PersonIcon />
@@ -92,7 +92,8 @@ export const Myaccount = () => {
             sx={{
               mb: 3,
               fontWeight: "bold",
-              color: "#5d4037"
+              color: "#5d4037",
+              fontSize: { xs: "1.8rem", md: "2.2rem" }
             }}
           >
             Iniciar Sesión
@@ -151,7 +152,7 @@ export const Myaccount = () => {
               variant="contained"
               sx={{
                 mt: 3,
-                py: 1.2,
+                py: { xs: 1, md: 1.2 },
                 bgcolor: "#5d4037",
                 "&:hover": {
                   bgcolor: "#3e2723"

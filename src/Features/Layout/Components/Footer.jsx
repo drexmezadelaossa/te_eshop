@@ -28,8 +28,8 @@ export const Footer = () => {
         sx={{
           background: `linear-gradient(180deg, ${MAIN_CHOCO} 0%, ${DARK_CHOCO} 100%)`,
           color: CREAM,
-          pt: 16,
-          pb: 8,
+          pt: { xs: 12, md: 16 },
+          pb: { xs: 6, md: 8 },
           position: "relative",
           overflow: "hidden",
 
@@ -59,7 +59,7 @@ export const Footer = () => {
         <Container maxWidth="lg">
           <Stack
             direction={{ xs: "column", md: "row" }}
-            spacing={8}
+            spacing={{ xs: 6, md: 8 }}
             justifyContent="space-between"
             alignItems={{ xs: "center", md: "flex-start" }}
           >
@@ -107,7 +107,7 @@ export const Footer = () => {
                   fontWeight: 700,
                   color: GOLD,
                   letterSpacing: 1.5,
-                  textShadow: "0px 3px 10px rgba(0,0,0,0.5)"
+                  fontSize: { xs: "1.8rem", md: "2.2rem" }
                 }}
               >
                 Postres Katiana
@@ -122,7 +122,7 @@ export const Footer = () => {
 
               <Box
                 sx={{
-                  fontSize: 50,
+                  fontSize: { xs: 40, md: 50 },
                   transition: "all 0.4s ease",
                   filter: "drop-shadow(0px 8px 8px rgba(0,0,0,0.5))",
                   "&:hover": { transform: "scale(1.2) rotate(-6deg)" }
