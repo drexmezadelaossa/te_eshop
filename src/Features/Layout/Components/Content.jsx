@@ -19,7 +19,7 @@ import { UseFavoritos } from "../../Auth/Hooks/UseFavoritos.jsx";
 
 // Quitamos el default y usamos export nombrado
 export const Content = () => {
-  const productosDestacados = [
+const productosDestacados = [
   { id: 1, nombre: "Arequipe", precio: 7500, img: "img/Arequipe.webp", desc: "Rico para compartir en familia." },
   { id: 2, nombre: "Fresa", precio: 7500, img: "img/Torta_fresa.webp", desc: "Una mezcla de mora, fresa y frambuesa." },
   { id: 3, nombre: "Brownie", precio: 7500, img: "img/Brownie.webp", desc: "Sabor delicioso e indulgente." },
