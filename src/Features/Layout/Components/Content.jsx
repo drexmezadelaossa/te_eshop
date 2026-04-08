@@ -17,20 +17,22 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import { animarFavorito } from "../../../Utils/animarFavorito.jsx";
 import { UseFavoritos } from "../../Auth/Hooks/UseFavoritos.jsx";
 
-// Quitamos el default y usamos export nombrado
-export const Content = () => {
-const productosDestacados = [
-  { id: 1, nombre: "Arequipe", precio: 7500, img: "img/Arequipe.webp", desc: "Rico para compartir en familia." },
-  { id: 2, nombre: "Fresa", precio: 7500, img: "img/Torta_fresa.webp", desc: "Una mezcla de mora, fresa y frambuesa." },
-  { id: 3, nombre: "Brownie", precio: 7500, img: "img/Brownie.webp", desc: "Sabor delicioso e indulgente." },
-  { id: 4, nombre: "Maracuya", precio: 7500, img: "img/Maracuya.webp", desc: "Sabor delicioso e indulgente." },
-  { id: 5, nombre: "Milo", precio: 7500, img: "img/Milo.webp", desc: "Sabor delicioso e indulgente." },
-  { id: 6, nombre: "Mora", precio: 7500, img: "img/Mora.webp", desc: "Sabor delicioso e indulgente." },
-  { id: 7, nombre: "Melocoton", precio: 7500, img: "img/Melocoton.webp", desc: "Sabor delicioso e indulgente." },
-  { id: 8, nombre: "Caramelo", precio: 7500, img: "img/Torta_caramelo.webp", desc: "Sabor delicioso e indulgente." },
-  { id: 9, nombre: "Griego", precio: 7500, img: "img/Torta_limon.webp", desc: "Sabor delicioso e indulgente." },
-];
+// 👇 ESTA LÍNEA ES CLAVE
+const base = import.meta.env.BASE_URL;
 
+export const Content = () => {
+
+const productosDestacados = [
+  { id: 1, nombre: "Arequipe", precio: 7500, img: `${base}img/Arequipe.webp`, desc: "Rico para compartir en familia." },
+  { id: 2, nombre: "Fresa", precio: 7500, img: `${base}img/Torta_fresa.webp`, desc: "Una mezcla de mora, fresa y frambuesa." },
+  { id: 3, nombre: "Brownie", precio: 7500, img: `${base}img/Brownie.webp`, desc: "Sabor delicioso e indulgente." },
+  { id: 4, nombre: "Maracuya", precio: 7500, img: `${base}img/Maracuya.webp`, desc: "Sabor delicioso e indulgente." },
+  { id: 5, nombre: "Milo", precio: 7500, img: `${base}img/Milo.webp`, desc: "Sabor delicioso e indulgente." },
+  { id: 6, nombre: "Mora", precio: 7500, img: `${base}img/Mora.webp`, desc: "Sabor delicioso e indulgente." },
+  { id: 7, nombre: "Melocoton", precio: 7500, img: `${base}img/Melocoton.webp`, desc: "Sabor delicioso e indulgente." },
+  { id: 8, nombre: "Caramelo", precio: 7500, img: `${base}img/Torta_caramelo.webp`, desc: "Sabor delicioso e indulgente." },
+  { id: 9, nombre: "Griego", precio: 7500, img: `${base}img/Torta_limon.webp`, desc: "Sabor delicioso e indulgente." },
+];
   const { favoritos, toggleFavorito } = UseFavoritos();
 
   return (
