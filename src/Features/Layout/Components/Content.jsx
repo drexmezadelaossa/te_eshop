@@ -223,7 +223,7 @@ const productosDestacados = [
   >
     Ver proyecto en Vercel
   </Button>
-</Box>
+</Box>|
       </Box>
     </>
   );
