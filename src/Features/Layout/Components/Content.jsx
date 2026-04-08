@@ -140,41 +140,90 @@ const productosDestacados = [
           mb: 4
         }}
       >
-        <Button
-          variant="contained"
-          startIcon={<GitHubIcon />}
-          href="https://github.com/drexmezadelaossa/te_eshop.git"
-          target="_blank"
-          rel="noopener noreferrer"
-          sx={{
-            background: "linear-gradient(135deg, #24292e, #3b3f45)",
-            color: "#fff",
-            borderRadius: "40px",
-            px: { xs: 3, md: 5 },
-            py: { xs: 1.2, md: 1.8 },
-            fontSize: { xs: "14px", md: "17px" },
-            fontWeight: 600,
-            letterSpacing: "0.5px",
-            textTransform: "none",
-            boxShadow: "0 8px 20px rgba(0,0,0,0.25)",
-            transition: "all 0.35s ease",
-            display: "flex",
-            alignItems: "center",
-            gap: 1,
+       <Box
+  sx={{
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    mt: 6,
+    mb: 4,
+    gap: 2, // espacio entre botones
+    flexWrap: "wrap" // para que en pantallas pequeñas no se salga
+  }}
+>
+  {/* Botón GitHub */}
+  <Button
+    variant="contained"
+    startIcon={<GitHubIcon />}
+    href="https://github.com/drexmezadelaossa/te_eshop.git"
+    target="_blank"
+    rel="noopener noreferrer"
+    sx={{
+      background: "linear-gradient(135deg, #24292e, #3b3f45)",
+      color: "#fff",
+      borderRadius: "40px",
+      px: { xs: 3, md: 5 },
+      py: { xs: 1.2, md: 1.8 },
+      fontSize: { xs: "14px", md: "17px" },
+      fontWeight: 600,
+      letterSpacing: "0.5px",
+      textTransform: "none",
+      boxShadow: "0 8px 20px rgba(0,0,0,0.25)",
+      transition: "all 0.35s ease",
+      display: "flex",
+      alignItems: "center",
+      gap: 1,
 
-            "&:hover": {
-              background: "linear-gradient(135deg, #1b1f23, #2f3338)",
-              transform: "translateY(-3px) scale(1.05)",
-              boxShadow: "0 12px 30px rgba(0,0,0,0.35)"
-            },
+      "&:hover": {
+        background: "linear-gradient(135deg, #1b1f23, #2f3338)",
+        transform: "translateY(-3px) scale(1.05)",
+        boxShadow: "0 12px 30px rgba(0,0,0,0.35)"
+      },
 
-            "&:active": {
-              transform: "scale(0.98)"
-            }
-          }}
-        >
-          Ver repositorio en GitHub
-        </Button>
+      "&:active": {
+        transform: "scale(0.98)"
+      }
+    }}
+  >
+    Ver repositorio en GitHub
+  </Button>
+
+  {/* Botón Vercel */}
+  <Button
+    variant="contained"
+    href="https://nombre-de-tu-proyecto.vercel.app" // <--- PON AQUÍ TU LINK DE VERCEL
+    target="_blank"
+    rel="noopener noreferrer"
+    sx={{
+      background: "linear-gradient(135deg, #00C853, #B2FF59)", // color verde de Vercel
+      color: "#fff",
+      borderRadius: "40px",
+      px: { xs: 3, md: 5 },
+      py: { xs: 1.2, md: 1.8 },
+      fontSize: { xs: "14px", md: "17px" },
+      fontWeight: 600,
+      letterSpacing: "0.5px",
+      textTransform: "none",
+      boxShadow: "0 8px 20px rgba(0,0,0,0.25)",
+      transition: "all 0.35s ease",
+      display: "flex",
+      alignItems: "center",
+      gap: 1,
+
+      "&:hover": {
+        background: "linear-gradient(135deg, #00E676, #CCFF90)",
+        transform: "translateY(-3px) scale(1.05)",
+        boxShadow: "0 12px 30px rgba(0,0,0,0.35)"
+      },
+
+      "&:active": {
+        transform: "scale(0.98)"
+      }
+    }}
+  >
+    Ver proyecto en Vercel
+  </Button>
+</Box>
       </Box>
     </>
   );
